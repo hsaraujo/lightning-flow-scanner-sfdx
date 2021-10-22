@@ -99,6 +99,7 @@ export default class scan extends SfdxCommand {
               scanResult.flow.label[0],
               ruleResult.ruleName,
               ruleResult.ruleDescription,
+              scanResult.flow.uri,
               {
                 "name": result.name,
                 "type": result.subtype,
@@ -110,7 +111,8 @@ export default class scan extends SfdxCommand {
             lintResults.push(new Violation(
               scanResult.flow.label[0],
               ruleResult.ruleName,
-              ruleResult.ruleDescription
+              ruleResult.ruleDescription,
+              scanResult.flow.uri
             ));
           }
         }
